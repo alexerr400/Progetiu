@@ -13,32 +13,15 @@ import android.widget.LinearLayout;
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout canvao;
-    private Birl teste;
+    private Canva canv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        teste = new Birl(this);
-        setContentView(teste);
+        canv = new Canva(this);
+        setContentView(canv);
 
     }
 
-    private class Birl extends View
-    {
-
-        public Birl(Context context)
-        {
-            super(context);
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas)
-        {
-            Paint paint = new Paint();
-            paint.setColor(Color.BLACK);
-            canvas.drawRect(10,10,15,15,paint);
-            invalidate();
-        }
-    }
 }
