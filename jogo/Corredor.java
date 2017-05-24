@@ -1,6 +1,7 @@
 package com.example.u15161.progetiu.jogo;
 
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.graphics.Rect;
 
 /**
@@ -21,6 +22,7 @@ public class Corredor /*extends Rect*/ {
         this.yA = yI;
         this.w  = wI;
         this.h  = hI;
+        this.limite = limite;
 
         //super(xA, yA, w, h);
     }
@@ -44,6 +46,10 @@ public class Corredor /*extends Rect*/ {
     public boolean chegou(){
         return yA == limite;
 
+    }
+
+    public Rect cara(){
+        return new Rect(xA, yA, w, h);
     }
 
 }

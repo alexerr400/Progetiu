@@ -7,7 +7,11 @@ import android.graphics.Canvas;
  */
 
 public class Jogao extends Thread {
+
     Canvas tl;
+    Corredor[] corre = new Corredor[4];
+
+
 
     public Jogao(Canvas desenho){
         tl = desenho;
@@ -16,6 +20,13 @@ public class Jogao extends Thread {
 
     @Override
     public void run() {
-        
+        boolean chegou = false;
+        while (!chegou) {
+            
+
+            for (int i = 0; i < 8; i++)
+                if (corre[i].chegou())
+                    chegou = true;
+        }
     }
 }
