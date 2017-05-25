@@ -39,4 +39,29 @@ public class Tiros {
         Rect posicoes = corre.cara();
         return false;
     }
+
+    public boolean vazou(int topo){
+        if ((y + h) < topo)
+            return true;
+        return false;
+    }
+
+    public int getW() {
+        return w;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+
+    public Rect getRect(){
+        Rect rc = new Rect();
+        rc.left = x;
+        rc.right = w;
+        rc.top = y;
+        rc.bottom = h;
+
+        return rc;
+    }
 }

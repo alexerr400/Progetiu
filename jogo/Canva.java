@@ -25,7 +25,7 @@ public class Canva extends View{
     public void onDraw(Canvas canvas) {
         Paint brush = new Paint();
         brush.setColor(Color.BLACK);
-        game = new Jogao(canvas);
+        game = new Jogao(canvas, brush);
 
         game.run();
 
