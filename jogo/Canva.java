@@ -15,17 +15,21 @@ import android.view.View;
 public class Canva extends View{
 
     private Jogao game;
+    float x,y,z;
 
 
-    public Canva(Context ctx) {
+    public Canva(Context ctx,float xis,float ylon,float ze) {
         super(ctx);
+        x = xis;
+        y = ylon;
+        z = ze;
     }
 
-    @Override
+
     public void onDraw(Canvas canvas) {
         Paint brush = new Paint();
         brush.setColor(Color.BLACK);
-        game = new Jogao(canvas, brush);
+        game = new Jogao(canvas, brush, x, y, z);
 
         game.run();
 
