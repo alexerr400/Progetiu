@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 /**
  * Created by u15157 on 24/05/2017.
@@ -15,22 +18,29 @@ import android.view.View;
 public class Canva extends View{
 
     private Jogao game;
+    float x,y,z;
+    private Paint brush;
+    private Corredor[] corre = new Corredor[5];
+    private Tiros[] bolas = new Tiros[21];
+    private boolean chegou;
 
 
-    public Canva(Context ctx) {
+    public Canva(Context ctx,float xis,float ylon,float ze) {
         super(ctx);
+        x = xis;
+        y = ylon;
+        z = ze;
+        chegou = false;
+
     }
 
-    @Override
+
     public void onDraw(Canvas canvas) {
-        Paint brush = new Paint();
+        brush = new Paint();
         brush.setColor(Color.BLACK);
         canvas.drawRect(0,0,100,100, brush);
-        game = new Jogao(canvas, brush);
-
-        while (!game.chegou()) {
-            game.run();
-        }
 
     }
+
+
 }

@@ -8,7 +8,7 @@ import android.graphics.Rect;
  * Created by u15157 on 24/05/2017.
  */
 
-public class Corredor /*extends Rect*/ {
+public class Corredor {
 
     private int xA, yA, w, h, limite;
 
