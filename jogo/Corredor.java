@@ -48,7 +48,7 @@ public class Corredor {
 
     }
 
-    public Rect cara(){
+    public Rect getCara(){
         return new Rect(xA, yA, w, h);
     }
 

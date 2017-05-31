@@ -87,8 +87,9 @@ public class Jogao extends Thread {
 */
 
 
-                sleep(100);
+                tl.setTudo(corre, bolas);
                 tl.invalidate();
+                sleep(100);
             }
         } catch (Exception ex){
             System.out.println(ex.getMessage());

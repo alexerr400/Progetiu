@@ -21,7 +21,7 @@ public class Canva extends View{
     float x,y,z;
     private Paint brush;
     private Corredor[] corre = new Corredor[5];
-    private Tiros[] bolas = new Tiros[21];
+    private Tiros[] tiro = new Tiros[21];
     private boolean chegou;
 
 
@@ -35,10 +35,26 @@ public class Canva extends View{
     }
 
 
+    public void setTudo(Corredor[] nc, Tiros[] nt){
+        corre = nc;
+        tiro = nt;
+    }
+
+
     public void onDraw(Canvas canvas) {
         brush = new Paint();
         brush.setColor(Color.BLACK);
         canvas.drawRect(0,0,100,100, brush);
+        for (int i = 0; i < corre.length; i++){
+            if (corre[i] != null){
+                canvas.drawRect(corre[i].getCara(), brush);
+            }
+        }
+        for (int i = 0; i < tiro.length; i++){
+            if (tiro[i] != null){
+                canvas.drawRect(tiro[i].getTiro(), brush);
+            }
+        }
 
     }
 

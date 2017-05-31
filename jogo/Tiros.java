@@ -36,7 +36,7 @@ public class Tiros {
     }
 
     public boolean matou(Corredor corre){
-        Rect posicoes = corre.cara();
+        Rect posicoes = corre.getCara();
         return false;
     }
 
@@ -55,7 +55,7 @@ public class Tiros {
     }
 
 
-    public Rect getRect(){
+    public Rect getTiro(){
         Rect rc = new Rect();
         rc.left = x;
         rc.right = w;
