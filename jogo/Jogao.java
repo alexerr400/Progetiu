@@ -9,6 +9,7 @@ import android.graphics.Paint;
 
 public class Jogao extends Thread {
 
+    boolean chegou;
     Canvas tl;
     Corredor[] corre = new Corredor[4];
     Tiros[] bolas = new Tiros[20];
@@ -20,16 +21,18 @@ public class Jogao extends Thread {
     public Jogao(Canvas desenho, Paint pa){
         tl = desenho;
         br = pa;
+        chegou = false;
 
     }
 
 
+    public boolean chegou() {
+        return chegou;
+    }
+
     @Override
     public void run() {
         try {
-            boolean chegou = false;
-            while (!chegou) {
-
 
                 for (int i = 0; i < 4; i++) {
                     if (corre[i].chegou())
@@ -73,9 +76,8 @@ public class Jogao extends Thread {
 
                 sleep(10);
 
-            }
         } catch (Exception ex){
-
+            System.out.println(ex.getMessage());
         }
     }
 }
