@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         SM.registerListener(this, mySensor, SensorManager.SENSOR_DELAY_NORMAL);
 
         canv = new Canva(this, x,y,z);
-        jogo = new Jogao(canv, x,y,z);
+        jogo = new Jogao(canv, x,y,z, canv.getWidth());
         setContentView(canv);
     }
 

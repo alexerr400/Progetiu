@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 
+
 /**
  * Created by u15157 on 24/05/2017.
  */
@@ -32,7 +33,7 @@ public class Corredor {
     }
 
     public void andar(){
-        yA += 10;
+        yA = yA + 10;
     }
 
     public int alturaAtual() {

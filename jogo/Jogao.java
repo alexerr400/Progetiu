@@ -15,12 +15,13 @@ public class Jogao extends Thread {
     boolean chegou;
     Canva tl;
     Corredor[] corre = new Corredor[5];
-    Tiros[] bolas = new Tiros[21];
+    Tiros[] bolas = new Tiros[5];
     float x,y,z;
+    int wC;
 
 
 
-    public Jogao(Canva desenho, float xis, float ylon, float ze){
+    public Jogao(Canva desenho, float xis, float ylon, float ze, int width){
         tl = desenho;
         chegou = false;
         x = xis;
@@ -28,6 +29,9 @@ public class Jogao extends Thread {
         z = ze;
     }
 
+    private int aleatorioX(){
+        while 
+    }
 
     public boolean chegou() {
         return chegou;
@@ -40,14 +44,14 @@ public class Jogao extends Thread {
             int count = 0;
             while (!chegou) {
 
-                for (int i = 0; i < 4; i++) {
+                for (int i = 0; i < corre.length; i++) {
                     if (corre[i] != null)
                         if (corre[i].chegou())
                             chegou = true;
 
 
-                    if (corre[i] == null && corre.length < 4) {
-                        corre[i] = new Corredor((int) Math.random() * 10, tl.getHeight());
+                    if (corre[i] == null) {
+                        corre[i] = new Corredor(((int) Math.random() * 100), 1, 10, 10, tl.getHeight());
                         System.out.println("AEE");
                     } else if (corre[i] != null) {
                         corre[i].andar();
@@ -57,23 +61,21 @@ public class Jogao extends Thread {
 
                 }
 
-                boolean foi1 = false;
-                for (int t = 0; t < 20; t++) {
+                for (int t = 0; t < bolas.length; t++) {
                     if (bolas[t] != null) {
                         if (bolas[t].vazou(0))
                             bolas[t] = null;
 
                         bolas[t].vai();
 
-                    } else if (!foi1) {
+                    } else {
                         bolas[t] = new Tiros(tl.getWidth(), tl.getHeight(), 10, 10);
-                        foi1 = true;
+                        break;
                     }
                 }
-                foi1 = false;
 
                 count++;
-                if (count == 3)
+                if (count == 4)
                     chegou = true;
 
             /*    for (int i = 0; i < 3; i++)

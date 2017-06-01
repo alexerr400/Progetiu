@@ -32,6 +32,8 @@ public class Canva extends View{
         z = ze;
         chegou = false;
 
+
+
     }
 
 
